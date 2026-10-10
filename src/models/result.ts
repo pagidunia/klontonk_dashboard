@@ -19,8 +19,6 @@ const NETWORK_MESSAGE = 'Server tidak terjangkau. Periksa koneksi lalu coba lagi
 
 export const networkError = (): AppError => ({ status: 0, code: 'network', message: NETWORK_MESSAGE, expired: false })
 
-export const localError = (message: string): AppError => ({ status: 0, code: 'local', message, expired: false })
-
 interface ErrorLike {
   message?: string
   code?: string | number

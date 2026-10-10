@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
  * berubah (mis. tombol "Bersihkan" atau pindah halaman), sedangkan ketikan pengguna tidak
  * mengubah URL sebelum tombol "Terapkan" ditekan.
  */
-export function useDraft<T extends object>(source: T): [T, <K extends keyof T>(key: K, value: T[K]) => void, (next: T) => void] {
+export function useDraft<T extends object>(source: T): [T, <K extends keyof T>(key: K, value: T[K]) => void] {
   const signature = JSON.stringify(source)
   const [draft, setDraft] = useState<T>(source)
 
@@ -15,5 +15,5 @@ export function useDraft<T extends object>(source: T): [T, <K extends keyof T>(k
   }, [signature])
 
   const setField = <K extends keyof T>(key: K, value: T[K]) => setDraft((current) => ({ ...current, [key]: value }))
-  return [draft, setField, setDraft]
+  return [draft, setField]
 }

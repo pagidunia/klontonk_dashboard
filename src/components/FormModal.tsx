@@ -119,7 +119,7 @@ export function FormModal({ spec, onClose }: FormModalProps) {
         <textarea
           id={id}
           name={field.name}
-          rows={field.rows ?? 3}
+          rows={3}
           required={field.required}
           placeholder={field.placeholder}
           maxLength={field.maxlength}
@@ -176,7 +176,7 @@ export function FormModal({ spec, onClose }: FormModalProps) {
         {error ? <div className="form-error">{error}</div> : null}
         <div className="modal-actions">
           <button type="button" className="btn btn-secondary" onClick={() => onClose(false)}>
-            {spec.cancelText ?? 'Batal'}
+            Batal
           </button>
           <button type="button" className="btn btn-primary" disabled={busy} aria-busy={busy || undefined} onClick={() => void submit()}>
             {spec.submitText ?? 'Simpan'}

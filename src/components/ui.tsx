@@ -46,11 +46,10 @@ export function Badge({ children, tone = '' }: { children: ReactNode; tone?: Ton
 interface CardProps {
   title?: string
   hint?: string
-  actions?: ReactNode
   children: ReactNode
 }
 
-export function Card({ title, hint, actions, children }: CardProps) {
+export function Card({ title, hint, children }: CardProps) {
   return (
     <section className="card">
       {title ? (
@@ -59,7 +58,6 @@ export function Card({ title, hint, actions, children }: CardProps) {
             <h2>{title}</h2>
             {hint ? <p className="hint">{hint}</p> : null}
           </div>
-          {actions}
         </div>
       ) : null}
       {children}

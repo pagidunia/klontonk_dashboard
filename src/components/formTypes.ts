@@ -1,6 +1,6 @@
 import type { Option } from '@/lib/lookups'
 
-export type FieldType = 'text' | 'search' | 'number' | 'email' | 'password' | 'date' | 'textarea' | 'select' | 'checkbox'
+export type FieldType = 'text' | 'number' | 'email' | 'password' | 'date' | 'textarea' | 'select' | 'checkbox'
 
 export interface FormField {
   name: string
@@ -13,7 +13,6 @@ export interface FormField {
   min?: number
   max?: number
   maxlength?: number
-  rows?: number
   /** Dua field `half` yang berurutan ditampilkan sebaris. */
   half?: boolean
 }
@@ -27,7 +26,6 @@ export interface FormSpec {
   fields: FormField[]
   values?: Record<string, FormValue | number | null | undefined>
   submitText?: string
-  cancelText?: string
   wide?: boolean
   note?: string
   /** Modal hanya tertutup bila berhasil, sehingga pengguna bisa memperbaiki isian. */

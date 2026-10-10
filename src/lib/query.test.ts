@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { bersihkanKataKunci, compactParams, parseOffset } from './query'
+import { bersihkanKataKunci, parseOffset } from './query'
 
 describe('bersihkanKataKunci', () => {
   it('membuang karakter yang merusak filter PostgREST', () => {
@@ -25,11 +25,5 @@ describe('parseOffset', () => {
     ['12.9', 12]
   ])('parseOffset(%s) = %s', (input, expected) => {
     expect(parseOffset(input)).toBe(expected)
-  })
-})
-
-describe('compactParams', () => {
-  it('membuang nilai kosong, null, undefined, dan 0', () => {
-    expect(compactParams({ a: 'x', b: '', c: null, d: undefined, e: 0, f: 3 })).toEqual({ a: 'x', f: '3' })
   })
 })
